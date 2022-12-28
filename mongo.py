@@ -3,10 +3,10 @@ from pymongo import MongoClient
 
 client = MongoClient('localhost', 27017)
 db = client['Scrapped_Data']
-collection = db['ACM']
+collection = db['IEEE']
 
 
-with open('data.json') as file:
+with open('ieee.json') as file:
     file_data = json.load(file)
 
 collection.insert_many(file_data)
