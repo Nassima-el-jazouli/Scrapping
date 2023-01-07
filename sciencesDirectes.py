@@ -152,16 +152,15 @@ while (turn_it):
         # this list contains all our data
         all_journals.append(dico_journal)
 
+        with open("sciencesDirectes.json", "w") as write_file:
+            # convert the list into a json file
+            json.dump(all_journals, write_file, indent=4)
+
         print(current_link)
         current_link += 1
 
     driver.close
 
     turn_it = False
-
-
-with open("sciencesDirectes.json", "w") as write_file:
-    # convert the list into a json file
-    json.dump(all_journals, write_file, indent=4)
 
 driver.close()
